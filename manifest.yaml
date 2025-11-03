@@ -1,0 +1,49 @@
+manifestVersion: 1.0
+
+projects:
+# - name: MZ
+#   path: MZ
+- name: MW
+  path: MW
+
+
+environmentGroups:
+- name: dev
+  environments:
+  - name: test-env-1
+    url:
+      value: https://zcv91593.sprint.dynatracelabs.com/
+    auth:
+      token:
+        name: DT_API_TOKEN
+    
+  
+  # - name: test-env-2
+  #   url:
+  #     value: https://zcv91593.sprint.app.dynatracelabs.com/
+
+      
+  #   auth:
+  #     token:
+  #       name: DT_API_TOKEN
+  #     oAuth:
+  #       clientId:
+         
+  #         name: CLIENT_ID
+  #       clientSecret:
+          
+  #         name: CLIENT_SECRET
+          
+  #       tokenEndpoint:
+  #         value: https://sso-sprint.dynatracelabs.com/sso/oauth2/token
+              
+# - name: prod
+#   environments:
+#   - name: prod-env-1
+#     url:
+#       type: environment
+#       value: PROD_URL
+#     auth:
+#       token:
+#         name: PROD_TOKEN
+

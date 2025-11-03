@@ -1,0 +1,74 @@
+configs:
+  - id: MaintenanceWindowId
+    config:
+      template: mw copy.json
+      parameters:
+        mwName:
+          type: environment
+          name: MW_NAME
+
+        description:
+          type: environment
+          name: MW_DESCRIPTION
+
+        maintenanceType:
+          type: environment
+          name: MAINTENANCE_TYPE
+
+        suppression:
+          type: environment
+          name: SUPPRESSION
+
+        syntheticMonitorExecution:
+          type: environment
+          name: SYNTHETIC_MONITOR_EXECUTION
+
+        scheduleType:
+          type: environment
+          name: SCHEDULE_TYPE
+
+        dayOfWeek:
+          type: environment
+          name: DAY_OF_WEEK
+
+        scheduleStart:
+          type: environment
+          name: SCHEDULE_START
+
+        scheduleEnd:
+          type: environment
+          name: SCHEDULE_END
+
+        scheduleStartDate:
+          type: environment
+          name: SCHEDULE_START_DATE
+
+        scheduleEndDate:
+          type: environment
+          name: SCHEDULE_END_DATE
+
+        # scheduleStartTimeOnce:
+        #   type: environment
+        #   name: SCHEDULE_START_TIME_ONCE
+
+        # scheduleEndTimeOnce:
+        #   type: environment
+        #   name: SCHEDULE_END_TIME_ONCE
+
+        timeZone:
+          type: environment
+          name: TIME_ZONE
+
+        # managementZone:
+        #   type: reference
+        #   project: monaco
+        #   configId: managementZoneId
+        #   configType: 'builtin:management-zones'
+        #   property: id
+      skip: false
+
+    type:
+      settings:
+        schema: 'builtin:alerting.maintenance-window'
+        schemaVersion: "2.15"
+        scope: environment

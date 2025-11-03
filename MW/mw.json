@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "generalProperties": {
+    "name": "{{ .mwName }}",
+    "description": "{{ .description }}",
+    "maintenanceType": "{{ .maintenanceType }}",
+    "suppression": "{{ .suppression }}",
+    "disableSyntheticMonitorExecution": {{ .syntheticMonitorExecution}}
+  },
+  "schedule": {
+    "scheduleType": "{{ .scheduleType }}",
+    "onceRecurrence": {
+      "startTime": "{{ .scheduleStart }}",
+      "endTime": "{{ .scheduleEnd }}",
+      "timeZone": "{{ .timeZone }}"
+    }
+  },
+  "filters": []
+}

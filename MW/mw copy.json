@@ -1,0 +1,53 @@
+{
+  "enabled": true,
+  "generalProperties": {
+    "name": "{{ .mwName }}",
+    "description": "{{ .description }}",
+    "maintenanceType": "{{ .maintenanceType }}",
+    "suppression": "{{ .suppression }}",
+    "disableSyntheticMonitorExecution": {{ .syntheticMonitorExecution }}
+  },
+
+  "schedule": {
+    "scheduleType": "{{ .scheduleType }}",
+    {{ if eq .scheduleType "WEEKLY"}}
+    "weeklyRecurrence": {
+      "dayOfWeek": "{{ .dayOfWeek}}",
+      "timeWindow": {
+        "startTime": "{{ .scheduleStart }}",
+        "endTime": "{{ .scheduleEnd }}",
+        "timeZone": "{{ .timeZone }}"
+      },
+      "recurrenceRange": {
+        "scheduleStartDate": "{{ .scheduleStartDate }}",
+        "scheduleEndDate": "{{ .scheduleEndDate }}"
+      }
+    }
+
+    {{ else if eq .scheduleType "DAILY"}}
+    "dailyRecurrence": {
+      "timeWindow": {
+        "startTime": "{{ .scheduleStart}}",
+        "endTime": "{{ .scheduleEnd}}",
+        "timeZone": "{{ .timeZone }}"
+      },
+      "recurrenceRange": {
+        "scheduleStartDate": "{{ .scheduleStartDate }}",
+        "scheduleEndDate": "{{ .scheduleEndDate }}"
+      }
+    }
+
+    {{ else if eq .scheduleType "ONCE"}}
+
+    "onceRecurrence": {
+      "startTime": "{{ .scheduleStart }}",
+      "endTime": "{{ .scheduleEnd }}",
+      "timeZone": "{{ .timeZone }}"
+    }
+
+     {{ end}}
+  },
+  "filters": [
+    
+  ]
+}
