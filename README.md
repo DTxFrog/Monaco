@@ -2,7 +2,7 @@
 
 ### Set env variable
 ```bash
-source ./default.sh
+source ./env.sh
 ```
 
 ### Dry run
